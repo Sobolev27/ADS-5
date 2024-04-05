@@ -19,22 +19,22 @@ class TStack {
         delete[] data;
     }
 
-    void push(const T &item) {
-        if (top <= size - 1)
-            data[top++] = item;
-        else
-            throw std::string("Full");
+    void push(T value) {
+        if (top == size - 1) {
+            throw std::string("Overflow");
+        }
+        data[++top] = value;
     }
 
     T pop() {
-        if (top > 0)
-            return data[--top];
-        else
-            throw std::string("Empty!");
+        if (top == -1) {
+            throw std::string("Underflow");
+        }
+        return data[top--];
     }
 
     bool isEmpty() {
-        return top == 0;
+        return top == -1;
     }
 
     T watch() {

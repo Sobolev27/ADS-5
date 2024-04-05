@@ -1,5 +1,6 @@
 // Copyright 2021 NNTU-CS
 #include <string>
+#include <map>
 #include "tstack.h"
 
 bool operation(char iChar) {
