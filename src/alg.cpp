@@ -50,6 +50,9 @@ std::string infx2pstfx(const std::string inf) {
         postf += stack1.pop();
         postf += ' ';
     }
+    if (!postf.empty()) {
+        postf.pop_back();
+    }
     return postf;
 }
 
