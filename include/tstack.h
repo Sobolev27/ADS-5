@@ -4,12 +4,15 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <string>
 
 template<typename T, int size>
 class TStack {
+
 private:
     T *data;
     int top;
+
 public:
     TStack() : top(-1) {
         data = new T[size];
@@ -43,7 +46,6 @@ public:
         }
         return data[top];
     }
-
 };
 
 #endif  // INCLUDE_TSTACK_H_

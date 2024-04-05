@@ -9,7 +9,7 @@ bool operation(char iChar) {
 int priority(char iOper) {
     if (iOper == '*' || iOper == '/') return 2;
     if (iOper == '+' || iOper == '-') return 1;
-    else return 0;
+    return 0;
 }
 
 std::string infx2pstfx(const std::string inf) {
@@ -39,7 +39,8 @@ std::string infx2pstfx(const std::string inf) {
                 stack1.pop();
             }
         } else if (operation(iChar)) {
-            while (!stack1.isEmpty() && priority(stack1.watch()) >= priority(iChar)) {
+            while (!stack1.isEmpty() &&
+                   priority(stack1.watch()) >= priority(iChar)) {
                 postf += stack1.pop();
                 postf += ' ';
             }
